@@ -12,9 +12,10 @@ def index(request):
     num_instances = BookInstance.objects.all().count()
 
     #Count available books
-    num_instances_available = BookInstance.odjects.filter(status__exact='a').count()
+    num_instances_available = BookInstance.objects.filter(status__exact='a').count()
 
-    num_authors = Author.object.count()
+    #тут либо object либо objects
+    num_authors = Author.objects.count()
 
     #Render HTML with given data inside variable 'context'
     return render(
